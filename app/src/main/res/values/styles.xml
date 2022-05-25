@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="edt_input_default">
+        <item name="android:textAlignment">center</item>
+        <item name="android:fontFamily">@font/bungeeregular</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@drawable/edt_background</item>
+    </style>
+
+    <style name="button_default">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_button_light</item>
+        <item name="android:fontFamily">@font/bungeeregular</item>
+        <item name="android:textColor">?colorOnSurface</item>
+    </style>
+
+    <style name="tv_default">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:fontFamily">@font/bungeeregular</item>
+        <item name="android:textColor">?colorOnSurface</item>
+    </style>
+</resources>

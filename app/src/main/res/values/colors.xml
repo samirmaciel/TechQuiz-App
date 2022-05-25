@@ -16,6 +16,7 @@
     <color name="question_stroke_green">#FF0C7429</color>
     <color name="question_background_green">#FF82EA9F</color>
     <color name="question_select_color">#FFFFD493</color>
+    <color name="gray">#FFB9B9B9</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>

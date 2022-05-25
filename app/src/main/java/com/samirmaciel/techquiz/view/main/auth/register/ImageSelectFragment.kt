@@ -6,18 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.samirmaciel.techquiz.R
-import com.samirmaciel.techquiz.databinding.FragmentImageProfileBinding
+import com.samirmaciel.techquiz.databinding.FragmentImageSelectProfileBinding
 
 class ImageSelectFragment : Fragment() {
 
-    private var _binding: FragmentImageProfileBinding? = null
-    private val binding: FragmentImageProfileBinding get() = _binding!!
+    private var _binding: FragmentImageSelectProfileBinding? = null
+    private val binding: FragmentImageSelectProfileBinding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentImageProfileBinding.bind(inflater.inflate(R.layout.fragment_image_profile, container, false))
+        _binding = FragmentImageSelectProfileBinding.bind(inflater.inflate(R.layout.fragment_image_select_profile, container, false))
         return binding.root
     }
 

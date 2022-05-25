@@ -6,18 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.samirmaciel.techquiz.R
-import com.samirmaciel.techquiz.databinding.FragmentNewUserBinding
+import com.samirmaciel.techquiz.databinding.FragmentRegisterFormBinding
 
 class RegisterFormFragment : Fragment() {
 
-    private var _binding: FragmentNewUserBinding? = null
-    private val binding: FragmentNewUserBinding get() = _binding!!
+    private var _binding: FragmentRegisterFormBinding? = null
+    private val binding: FragmentRegisterFormBinding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentNewUserBinding.bind(inflater.inflate(R.layout.fragment_new_user, container, false))
+        _binding = FragmentRegisterFormBinding.bind(inflater.inflate(R.layout.fragment_register_form, container, false))
         return binding.root
     }
 

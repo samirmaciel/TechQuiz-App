@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/register_nav"
+    app:startDestination="@id/registerFormFragment">
+
+    <fragment
+        android:id="@+id/registerFormFragment"
+        android:name="com.samirmaciel.techquiz.view.main.auth.register.RegisterFormFragment"
+        android:label="fragment_register_form"
+        tools:layout="@layout/fragment_register_form" >
+        <action
+            android:id="@+id/action_registerFormFragment_to_imageSelectFragment"
+            app:destination="@id/imageSelectFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/imageSelectFragment"
+        android:name="com.samirmaciel.techquiz.view.main.auth.register.ImageSelectFragment"
+        android:label="fragment_image_select_profile"
+        tools:layout="@layout/fragment_image_select_profile" />
+
+</navigation>

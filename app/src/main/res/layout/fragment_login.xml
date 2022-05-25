@@ -46,6 +46,7 @@
         style="@style/tv_default" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_loginEnter"
         style="@style/button_default"
         android:text="@string/title_button_login_enter"
         android:layout_marginBottom="16dp"

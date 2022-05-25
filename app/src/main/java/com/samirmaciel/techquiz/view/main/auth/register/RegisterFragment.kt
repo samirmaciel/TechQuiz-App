@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.samirmaciel.techquiz.R
 import com.samirmaciel.techquiz.databinding.FragmentRegisterBinding
 
@@ -20,6 +22,13 @@ class RegisterFragment : Fragment() {
     ): View? {
         _binding = FragmentRegisterBinding.bind(inflater.inflate(R.layout.fragment_register, container, false))
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.btnRegisterContinue.setOnClickListener {
+            binding.fragmentContainerRegister.findNavController().navigate(R.id.action_registerFormFragment_to_imageSelectFragment)
+        }
     }
 
     override fun onDestroy() {

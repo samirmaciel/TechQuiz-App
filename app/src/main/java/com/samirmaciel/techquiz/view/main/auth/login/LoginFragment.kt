@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.samirmaciel.techquiz.R
 import com.samirmaciel.techquiz.databinding.FragmentLoginBinding
 
@@ -19,6 +20,13 @@ class LoginFragment : Fragment() {
     ): View? {
         _binding = FragmentLoginBinding.bind(inflater.inflate(R.layout.fragment_login, container, false))
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.btnLoginEnter.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+        }
     }
 
     override fun onDestroy() {

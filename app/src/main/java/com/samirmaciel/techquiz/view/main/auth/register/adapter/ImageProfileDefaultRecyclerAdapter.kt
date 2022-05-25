@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.samirmaciel.techquiz.R
 import com.samirmaciel.techquiz.view.main.auth.register.model.ImageProfileDefault
@@ -29,16 +30,27 @@ class ImageProfileDefaultRecyclerAdapter(val itemList: List<ImageProfileDefault>
         fun bindItem(position: Int){
             val imageProfile = itemView.findViewById<ImageView>(R.id.iv_imageDefault)
 
-            imageProfile.setImageResource(if(itemList[position].isSelected) R.color.white else R.color.purple_background)
-
+            imageProfile.setBackgroundResource(if(itemList[position].isSelected) R.drawable.bg_selected_imageprofiledefault else R.color.purple_background)
+            imageProfile.setImageResource(itemList[position].resourceID)
             imageProfile.setOnClickListener {
+                onSelectImage(itemList[position].resourceID)
                 if(itemList[position].isSelected){
-                    imageProfile.setImageResource(R.color.purple_background)
+                    imageProfile.setBackgroundResource(R.color.purple_background)
                     itemList[position].isSelected = false
+
                 }else{
-                    imageProfile.setImageResource(R.color.white)
+                    imageProfile.setBackgroundResource(R.drawable.bg_selected_imageprofiledefault)
                     itemList[position].isSelected = true
+                    for(image in itemList){
+                        if(image != itemList[position]){
+                            image.isSelected = false
+                        }
+                    }
+
+                    notifyDataSetChanged()
                 }
+
+
             }
 
         }

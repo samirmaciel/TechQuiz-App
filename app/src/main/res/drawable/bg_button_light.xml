@@ -5,9 +5,9 @@
     <item>
         <shape android:shape="rectangle">
             <gradient android:angle="360"
-                android:startColor="#706B4CAE"
-                android:centerColor="#70FFFFFF"
-                android:endColor="#6B4CAE"/>
+                android:startColor="?colorSecondary"
+                android:centerColor="?colorSecondaryVariant"
+                android:endColor="?colorOnSecondary"/>
             <corners android:radius="20dp"/>
         </shape>
     </item>
@@ -18,9 +18,9 @@
         android:top="4dp">
         <shape android:shape="rectangle" >
             <gradient android:angle="360"
-                android:startColor="#6B4CAE"
-                android:centerColor="#8381E3"
-                android:endColor="#6B4CAE"/>
+                android:startColor="?colorOnSecondary"
+                android:centerColor="?colorPrimary"
+                android:endColor="?colorOnSecondary"/>
             <corners android:radius="20dp"/>
         </shape>
     </item>

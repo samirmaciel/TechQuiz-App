@@ -2,6 +2,7 @@
 <resources>
     <color name="purple_background">#FF8381E3</color>
     <color name="light_button_background">#FF6B4CAE</color>
+    <color name="light_button_background_alpha">#706B4CAE</color>
     <color name="light_button_stroke">#FFD799FF</color>
     <color name="dark_background">#FF292D39</color>
     <color name="dark_button_stroke">#FF484848</color>
@@ -22,4 +23,5 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="white_alpha">#70FFFFFF</color>
 </resources>

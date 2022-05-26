@@ -6,4 +6,8 @@
     <string name="hint_login_email">Email</string>
     <string name="hint_login_password">Senha</string>
     <string name="title_button_login_enter">Entrar</string>
+    <string name="title_register_button_continue">Continuar</string>
+    <string name="title_button_friends">Amigos</string>
+    <string name="title_button_challenge">Desafio</string>
+    <string name="title_button_playgame">Jogar</string>
 </resources>

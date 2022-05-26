@@ -34,11 +34,6 @@ class ImageProfileDefaultRecyclerAdapter(val itemList: List<ImageProfileDefault>
             imageProfile.setImageResource(itemList[position].resourceID)
             imageProfile.setOnClickListener {
                 onSelectImage(itemList[position].resourceID)
-                if(itemList[position].isSelected){
-                    imageProfile.setBackgroundResource(R.color.purple_background)
-                    itemList[position].isSelected = false
-
-                }else{
                     imageProfile.setBackgroundResource(R.drawable.bg_selected_imageprofiledefault)
                     itemList[position].isSelected = true
                     for(image in itemList){
@@ -46,7 +41,6 @@ class ImageProfileDefaultRecyclerAdapter(val itemList: List<ImageProfileDefault>
                             image.isSelected = false
                         }
                     }
-
                     notifyDataSetChanged()
                 }
 
@@ -54,7 +48,7 @@ class ImageProfileDefaultRecyclerAdapter(val itemList: List<ImageProfileDefault>
             }
 
         }
-    }
+
 }
 
 

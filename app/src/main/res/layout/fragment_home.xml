@@ -1,9 +1,313 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.main.home.HomeFragment">
+
+    <ImageButton
+        android:id="@+id/btn_homeSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/settings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_homeRank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/rank"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/profileimage"
+            tools:layout_editor_absoluteX="162dp"
+            tools:layout_editor_absoluteY="46dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_homeUserImageProfile"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:src="@drawable/default_avatar_1" />
+
+    </FrameLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_homePlayGame"
+        style="@style/button_default"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/title_button_playgame"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_homeChallenge"
+        style="@style/button_default"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="50dp"
+        android:paddingEnd="45dp"
+        android:text="@string/title_button_challenge"
+        android:drawableLeft="@drawable/vs"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_homePlayGame" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_homeFriends"
+        style="@style/button_default"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/title_button_friends"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_homeChallenge"
+        tools:layout_editor_absoluteY="165dp" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_homeFriends"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/fl_firstRankProfilePodium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/firstranklabel"
+                    tools:layout_editor_absoluteX="162dp"
+                    tools:layout_editor_absoluteY="46dp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_homeFirstRankUserImageProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/default_avatar_1" />
+
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:id="@+id/fl_secondRankProfilePodium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/fl_firstRankProfilePodium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fl_firstRankProfilePodium">
+
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="right"
+                    android:src="@drawable/secondranklabel"
+                    tools:layout_editor_absoluteX="162dp"
+                    tools:layout_editor_absoluteY="46dp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_homeSecondRankUserImageProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/default_avatar_1" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/fl_thirdRankProfilePodium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/fl_secondRankProfilePodium"
+                app:layout_constraintTop_toBottomOf="@id/fl_secondRankProfilePodium">
+
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/thirdranklabel"
+                    tools:layout_editor_absoluteX="162dp"
+                    tools:layout_editor_absoluteY="46dp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_homeThirdRankUserImageProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/default_avatar_1" />
+
+            </FrameLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutCompat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:gravity="right"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/fl_firstRankProfilePodium"
+                app:layout_constraintEnd_toStartOf="@+id/fl_firstRankProfilePodium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/fl_firstRankProfilePodium">
+
+                <TextView
+                    android:id="@+id/tv_homePlayerName1"
+                    style="@style/tv_default"
+                    android:text="Jogador 1" />
+
+                <TextView
+                    android:id="@+id/tv_homePlayerScore1"
+                    style="@style/tv_default"
+                    android:text="999999"
+                    android:textColor="@color/label_yellow" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="left"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/fl_secondRankProfilePodium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/fl_secondRankProfilePodium"
+                app:layout_constraintTop_toTopOf="@+id/fl_secondRankProfilePodium">
+
+                <TextView
+                    android:id="@+id/tv_homePlayerName2"
+                    style="@style/tv_default"
+                    android:text="Jogador 2" />
+
+                <TextView
+                    android:id="@+id/tv_homePlayerScore2"
+                    style="@style/tv_default"
+                    android:text="999999"
+                    android:textColor="@color/label_yellow" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="left"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/fl_thirdRankProfilePodium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/fl_thirdRankProfilePodium"
+                app:layout_constraintTop_toTopOf="@+id/fl_thirdRankProfilePodium">
+
+                <TextView
+                    android:id="@+id/tv_homePlayerName3"
+                    style="@style/tv_default"
+                    android:text="Jogador 3" />
+
+                <TextView
+                    android:id="@+id/tv_homePlayerScore3"
+                    style="@style/tv_default"
+                    android:text="999999"
+                    android:textColor="@color/label_yellow" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/trofeu"
+            android:elevation="1dp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="677dp" />
+
+        <TextView
+            android:id="@+id/tv_homeUserScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/tv_default"
+            android:layout_marginStart="20dp"
+            android:text="99999"
+            android:elevation="0dp"
+            android:layout_gravity="bottom"
+            android:textColor="@color/label_yellow"
+            android:paddingStart="30dp"
+            android:paddingEnd="8dp"
+            android:background="@drawable/bg_button_light"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_homeOnlineFriends"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="-15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/tv_default"
+        android:text="99"
+        android:paddingStart="8dp"
+        android:textColor="@color/white"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:paddingEnd="23dp"
+        android:background="@drawable/bg_button_light"/>
 
 
 

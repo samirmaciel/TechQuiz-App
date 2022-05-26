@@ -7,7 +7,7 @@ object DefaultAssetsData {
 
     fun getAllImageProfileDeafult(): List<ImageProfileDefault>{
         return listOf(
-            ImageProfileDefault(R.drawable.default_avatar_1),
+            ImageProfileDefault(R.drawable.default_avatar_1, isSelected = true),
             ImageProfileDefault(R.drawable.default_avatar_2),
             ImageProfileDefault(R.drawable.default_avatar_3),
             ImageProfileDefault(R.drawable.default_avatar_4),

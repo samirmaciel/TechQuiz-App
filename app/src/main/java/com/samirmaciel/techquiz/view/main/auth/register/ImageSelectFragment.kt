@@ -33,17 +33,17 @@ class ImageSelectFragment : Fragment() {
         initRecycler()
     }
 
-
     private fun initRecycler(){
         val imageDefaultList = DefaultAssetsData.getAllImageProfileDeafult()
-        imageProfileAdapter = ImageProfileDefaultRecyclerAdapter(imageDefaultList, {
-            Toast.makeText(requireContext(), it.toString(), Toast.LENGTH_LONG).show()
-        })
+        imageProfileAdapter = ImageProfileDefaultRecyclerAdapter(imageDefaultList) {
+            binding.ivSelectedImageProfile.setImageResource(it)
+        }
         binding.rvImageprofiledefault.apply {
-            layoutManager = GridLayoutManager(requireContext(), 5)
+            layoutManager = GridLayoutManager(requireContext(), 3)
             adapter = imageProfileAdapter
         }
     }
+
     override fun onDestroy() {
         _binding = null
         super.onDestroy()

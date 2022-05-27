@@ -1,10 +1,245 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.challenge.quizMain.QuizMainFragment">
 
+    <FrameLayout
+        android:id="@+id/frameLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout4"
+        app:layout_constraintEnd_toStartOf="@+id/frameLayout4"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout4">
 
+        <ImageView
+            android:id="@+id/iv_quizMainProfilePlayerOne"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="4dp"
+            android:elevation="1dp"
+            android:src="@drawable/default_avatar_1" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_first_player_elips"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    </FrameLayout>
+
+    <TextView
+        style="@style/tv_default"
+        android:text="Jogador 1"
+        app:layout_constraintEnd_toEndOf="@+id/frameLayout1"
+        app:layout_constraintStart_toStartOf="@+id/frameLayout1"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout1" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout4"
+        app:layout_constraintStart_toEndOf="@+id/frameLayout4"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout4">
+
+        <ImageView
+            android:id="@+id/iv_quizMainProfilePlayerTwo"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="2dp"
+            android:elevation="1dp"
+            android:src="@drawable/default_avatar_1" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_second_player_elips"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    </FrameLayout>
+
+    <TextView
+        style="@style/tv_default"
+        android:text="Jogador 2"
+        app:layout_constraintEnd_toEndOf="@+id/frameLayout2"
+        app:layout_constraintStart_toStartOf="@+id/frameLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/tv_default"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:elevation="1dp"
+            android:text="0/10" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:elevation="0dp"
+            android:src="@drawable/ic_wintrophy" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="10dp">
+
+            <TextView
+                style="@style/tv_default"
+                android:layout_width="50dp"
+                android:background="@drawable/tv_background_score_quiz"
+                android:text="99"
+                android:textAlignment="center"
+                android:textColor="@color/score_blue" />
+
+            <TextView
+                style="@style/tv_default"
+                android:layout_width="50dp"
+                android:layout_marginStart="48dp"
+                android:background="@drawable/tv_background_score_quiz"
+                android:paddingHorizontal="8dp"
+                android:text="99"
+                android:textAlignment="center"
+                android:textColor="@color/score_red"/>
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="20dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-5dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout4">
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:textSize="20sp"
+                        android:layout_gravity="center"
+                        android:elevation="1dp"
+                        android:text="?"
+                        android:textColor="@color/white"/>
+
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/ic_scoreforquestion"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:textSize="30sp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_gravity="center"
+                        android:elevation="1dp"
+                        android:text="99"
+                        android:textColor="@color/score_green"/>
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:textSize="15sp"
+                        android:layout_marginTop="26dp"
+                        android:layout_gravity="center"
+                        android:elevation="1dp"
+                        android:text="Nivel"
+                        android:textColor="@color/white"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_scoreforquestion"/>
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:textSize="20sp"
+                        android:layout_gravity="center"
+                        android:elevation="1dp"
+                        android:text="?"
+                        android:textColor="@color/white"/>
+
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/ic_scoreforquestion"/>
+                </FrameLayout>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_quizQuestion"
+                android:text="Pergunta"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                style="@style/tv_default"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                tools:listitem="@layout/question_item"
+                android:id="@+id/rv_quizOptions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

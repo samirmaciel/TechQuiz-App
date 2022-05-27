@@ -10,4 +10,7 @@
     <string name="title_button_friends">Amigos</string>
     <string name="title_button_challenge">Desafio</string>
     <string name="title_button_playgame">Jogar</string>
+    <string name="title_button_rank">Rank</string>
+    <string name="hint_edt_search_friend">Procurar amigo</string>
+    <string name="title_button_back">Volta</string>
 </resources>

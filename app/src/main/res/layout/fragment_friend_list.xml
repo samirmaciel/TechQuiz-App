@@ -59,6 +59,7 @@
         app:layout_constraintTop_toBottomOf="@id/edt_friendsSearch"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/friends_item"
         app:layout_constraintBottom_toTopOf="@id/btn_friendsBack"/>
 
     <androidx.appcompat.widget.AppCompatButton

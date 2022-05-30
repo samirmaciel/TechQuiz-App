@@ -12,5 +12,10 @@
     <string name="title_button_playgame">Jogar</string>
     <string name="title_button_rank">Rank</string>
     <string name="hint_edt_search_friend">Procurar amigo</string>
-    <string name="title_button_back">Volta</string>
+    <string name="title_button_back">Voltar</string>
+    <string name="title_button_leave">Sair</string>
+    <string name="title_textview_you_win">Parabéns você venceu!</string>
+    <string name="title_textview_you_lose">Infelizmente você perdeu!</string>
+    <string name="title_textview_actual_score">Pontuação atual:</string>
+    <string name="title_textview_actual_position_rank">Posição no Rank:</string>
 </resources>

@@ -16,6 +16,7 @@
         <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/drawable/ic_wintrophy.xml" value="0.2485" />
         <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/drawable/tv_background_score_quiz.xml" value="0.2485" />
         <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/layout/bottomsheet_endgame.xml" value="0.3625" />
         <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/layout/dialog_fragment_profile.xml" value="0.3625" />
         <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/layout/fragment_friend_list.xml" value="0.3625" />
         <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/layout/fragment_home.xml" value="0.33" />
@@ -32,7 +33,7 @@
         <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/layout/fragment_splash.xml" value="0.3625" />
         <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/layout/friends_item.xml" value="0.3625" />
         <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/layout/imageprofile_item_recyclerview.xml" value="0.3625" />
-        <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/layout/question_item.xml" value="0.5" />
+        <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/layout/question_item.xml" value="0.33" />
       </map>
     </option>
   </component>

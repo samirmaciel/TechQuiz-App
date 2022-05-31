@@ -13,9 +13,10 @@
         <entry key="..\:/Users/fbatista/AndroidStudioProjects/TechQuiz-App/app/src/main/res/drawable/ic_winner.xml" value="0.1" />
         <entry key="..\:/Users/fbatista/AndroidStudioProjects/TechQuiz-App/app/src/main/res/drawable/ic_wintrophy.xml" value="0.1575" />
         <entry key="..\:/Users/fbatista/AndroidStudioProjects/TechQuiz-App/app/src/main/res/layout/activity_main.xml" value="0.12141941000427534" />
+        <entry key="..\:/Users/fbatista/AndroidStudioProjects/TechQuiz-App/app/src/main/res/layout/bottomsheet_endgame.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/fbatista/AndroidStudioProjects/TechQuiz-App/app/src/main/res/layout/dialog_fragment_profile.xml" value="0.12141941000427534" />
         <entry key="..\:/Users/fbatista/AndroidStudioProjects/TechQuiz-App/app/src/main/res/layout/fragment_friend_list.xml" value="0.22" />
-        <entry key="..\:/Users/fbatista/AndroidStudioProjects/TechQuiz-App/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Users/fbatista/AndroidStudioProjects/TechQuiz-App/app/src/main/res/layout/fragment_home.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/fbatista/AndroidStudioProjects/TechQuiz-App/app/src/main/res/layout/fragment_image_select_profile.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/fbatista/AndroidStudioProjects/TechQuiz-App/app/src/main/res/layout/fragment_login.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/fbatista/AndroidStudioProjects/TechQuiz-App/app/src/main/res/layout/fragment_quiz_final.xml" value="0.16666666666666666" />
@@ -42,7 +43,6 @@
         <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/drawable/ic_wintrophy.xml" value="0.2485" />
         <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/drawable/tv_background_score_quiz.xml" value="0.2485" />
         <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/layout/activity_main.xml" value="0.3625" />
-        <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/layout/bottomsheet_endgame.xml" value="0.3625" />
         <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/layout/dialog_fragment_profile.xml" value="0.3625" />
         <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/layout/fragment_friend_list.xml" value="0.3625" />
         <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/layout/fragment_home.xml" value="0.33" />
@@ -59,7 +59,7 @@
         <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/layout/fragment_splash.xml" value="0.3625" />
         <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/layout/friends_item.xml" value="0.3625" />
         <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/layout/imageprofile_item_recyclerview.xml" value="0.3625" />
-        <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/layout/question_item.xml" value="0.33" />
+        <entry key="..\:/Users/samir/AndroidStudioProjects/TechQuiz/app/src/main/res/layout/question_item.xml" value="0.5" />
       </map>
     </option>
   </component>

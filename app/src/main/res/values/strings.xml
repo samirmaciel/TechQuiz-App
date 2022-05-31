@@ -13,4 +13,11 @@
     <string name="title_button_rank">Rank</string>
     <string name="hint_edt_search_friend">Procurar amigo</string>
     <string name="title_button_back">Volta</string>
+    <string name="message_winner_game">Parabéns você ganhou!</string>
+    <string name="message_endGameScoreEarned">+420</string>
+    <string name="message_currentScore"><![CDATA[Pontuação atual: ]]></string>
+    <string name="score_currentScoreActual">66100</string>
+    <string name="message_currentRating"><![CDATA[Classificação atual: ]]></string>
+    <string name="score_currentRatingActual">1140</string>
+    <string name="message_rematchGame">Revanche</string>
 </resources>

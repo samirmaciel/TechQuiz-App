@@ -1,111 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".view.challenge.quizFinal.EndGameBottomSheet"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/iv_iconWinOrLose"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_wintrophy"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tv_endGameMessage"
-        style="@style/tv_default"
-        android:text="@string/title_textview_you_win"
-        android:textAlignment="center"
-        android:textColor="@color/label_yellow"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_iconWinOrLose" />
+        <ImageView
+            android:id="@+id/iv_iconWinOrLose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_wintrophy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+        </ImageView>
 
-    <TextView
-        android:id="@+id/tv_endGameScoreEarned"
-        style="@style/tv_default"
-        android:text="+999"
-        android:textAlignment="center"
-        android:textColor="@color/score_green"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_endGameMessage" />
+        <TextView
+            android:id="@+id/tv_endGameMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="85dp"
+            android:textSize="32sp"
+            android:textColor="@color/label_yellow"
+            android:textAlignment="center"
+            style="@style/tv_default"
+            android:text="@string/message_winner_game"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_iconWinOrLose">
+        </TextView>
 
+        <TextView
+            android:id="@+id/tv_endGameScoreEarned"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="@color/score_green"
+            android:textAlignment="center"
+            android:text="@string/message_endGameScoreEarned"
+            style="@style/tv_default"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_endGameMessage">
+        </TextView>
 
-    <TextView
-        android:id="@+id/tv_endGameActualScore"
-        style="@style/tv_default"
-        android:text="+999"
-        android:textAlignment="center"
-        android:textColor="@color/score_green"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView1"
-        app:layout_constraintStart_toEndOf="@+id/textView1"
-        app:layout_constraintTop_toTopOf="@+id/textView1" />
+        <LinearLayout
+            android:id="@+id/linearlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_endGameScoreEarned">
 
-    <TextView
-        android:id="@+id/tv_endGameRankPosition"
-        style="@style/tv_default"
-        android:text="+999"
-        android:textAlignment="center"
-        android:textColor="@color/score_green"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="@+id/textView2" />
+            <TextView
+                android:id="@+id/tv_currentScoreMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                style="@style/tv_default"
+                android:text="@string/message_currentScore">
+            </TextView>
 
+            <TextView
+                android:id="@+id/tv_currentScoreActual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/score_green"
+                style="@style/tv_default"
+                android:text="@string/score_currentScoreActual">
+            </TextView>
 
-    <TextView
-        android:id="@+id/textView1"
-        style="@style/tv_default"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/title_textview_actual_score"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_endGameScoreEarned" />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView2"
-        style="@style/tv_default"
-        android:layout_marginStart="44dp"
-        android:text="@string/title_textview_actual_position_rank"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+        <LinearLayout
+            android:id="@+id/linearlayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearlayout">
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_doublesword"
-        app:layout_constraintBottom_toTopOf="@+id/btn_endGameBackToHome"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            <TextView
+                android:id="@+id/tv_currentRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                style="@style/tv_default"
+                android:textAlignment="center"
+                android:text="@string/message_currentRating">
+            </TextView>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_endGameBackToHome"
-        style="@style/button_default"
-        android:layout_marginHorizontal="50dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/title_button_leave"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:id="@+id/tv_currentRatingActual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/score_green"
+                style="@style/tv_default"
+                android:text="@string/score_currentRatingActual">
+            </TextView>
+        </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@id/btn_play_rematch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_akar_icons_double_sword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearlayout2">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/tv_rematchGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/tv_default"
+            android:textColor="@color/light_orange"
+            android:textSize="24sp"
+            android:text="@string/message_rematchGame"
+            app:layout_constraintTop_toBottomOf="@+id/btn_play_rematch">
+        </TextView>
+
+        <ImageView
+            android:id="@+id/btn_play_quiz_again"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rematchGame"
+            android:src="@drawable/ic_repeat_game">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/tv_playAgainMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            style="@style/tv_default"
+            android:layout_marginStart="6dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_play_quiz_again"
+            android:text="    JOGUE \nNOVAMENTE">
+        </TextView>
+
+        <ImageView
+            android:id="@+id/btn_home_quiz"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rematchGame"
+            android:src="@drawable/ic_iconoir_home">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/tv_mainMenuMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            style="@style/tv_default"
+            android:layout_marginEnd="7dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_home_quiz"
+            android:text="      MENU \nPRINCIPAL">
+        </TextView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/bungeeregular"
-        android:text="@string/selected_image_profile"
+        android:text="selected image profile"
         android:textColor="?colorOnSurface"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"

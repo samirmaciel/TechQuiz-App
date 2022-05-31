@@ -23,4 +23,12 @@
         <item name="android:fontFamily">@font/bungeeregular</item>
         <item name="android:textColor">?colorOnSurface</item>
     </style>
+
+    <style name="MyBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/MyBottomSheetStyle</item>
+    </style>
+
+    <style name="MyBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
 </resources>

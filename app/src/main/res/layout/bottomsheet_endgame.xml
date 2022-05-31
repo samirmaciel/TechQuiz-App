@@ -28,7 +28,7 @@
             android:textColor="@color/label_yellow"
             android:textAlignment="center"
             style="@style/tv_default"
-            android:text="@string/message_winner_game"
+            android:text="@string/title_textview_winner_game"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_iconWinOrLose">
@@ -41,7 +41,7 @@
             android:textSize="24sp"
             android:textColor="@color/score_green"
             android:textAlignment="center"
-            android:text="@string/message_endGameScoreEarned"
+            android:text="@string/title_textview_endGameScoreEarned"
             style="@style/tv_default"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -65,17 +65,18 @@
                 android:textSize="18sp"
                 android:textColor="@color/white"
                 style="@style/tv_default"
-                android:text="@string/message_currentScore">
+                android:text="@string/title_textview_currentScore">
             </TextView>
 
             <TextView
                 android:id="@+id/tv_currentScoreActual"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
                 android:textSize="18sp"
                 android:textColor="@color/score_green"
                 style="@style/tv_default"
-                android:text="@string/score_currentScoreActual">
+                android:text="@string/title_textview_currentScoreActual">
             </TextView>
 
         </LinearLayout>
@@ -97,17 +98,18 @@
                 android:textColor="@color/white"
                 style="@style/tv_default"
                 android:textAlignment="center"
-                android:text="@string/message_currentRating">
+                android:text="@string/title_textview_currentRating">
             </TextView>
 
             <TextView
                 android:id="@+id/tv_currentRatingActual"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
                 android:textSize="18sp"
                 android:textColor="@color/score_green"
                 style="@style/tv_default"
-                android:text="@string/score_currentRatingActual">
+                android:text="@string/title_textview_currentRatingActual">
             </TextView>
         </LinearLayout>
 
@@ -116,7 +118,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:src="@drawable/ic_akar_icons_double_sword"
+            android:src="@drawable/ic_doublesword"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearlayout2">
@@ -131,7 +133,7 @@
             style="@style/tv_default"
             android:textColor="@color/light_orange"
             android:textSize="24sp"
-            android:text="@string/message_rematchGame"
+            android:text="@string/title_textview_rematchGame"
             app:layout_constraintTop_toBottomOf="@+id/btn_play_rematch">
         </TextView>
 
@@ -140,7 +142,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="30dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_rematchGame"
             android:src="@drawable/ic_repeat_game">
@@ -148,14 +150,15 @@
 
         <TextView
             android:id="@+id/tv_playAgainMessage"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:textSize="18sp"
             style="@style/tv_default"
-            android:layout_marginStart="6dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@id/btn_play_quiz_again"
+            app:layout_constraintStart_toStartOf="@id/btn_play_quiz_again"
             app:layout_constraintTop_toBottomOf="@id/btn_play_quiz_again"
-            android:text="    JOGUE \nNOVAMENTE">
+            android:text="JOGUE NOVAMENTE">
         </TextView>
 
         <ImageView
@@ -171,14 +174,15 @@
 
         <TextView
             android:id="@+id/tv_mainMenuMessage"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:textSize="18sp"
             style="@style/tv_default"
-            android:layout_marginEnd="7dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@id/btn_home_quiz"
+            app:layout_constraintStart_toStartOf="@id/btn_home_quiz"
             app:layout_constraintTop_toBottomOf="@id/btn_home_quiz"
-            android:text="      MENU \nPRINCIPAL">
+            android:text="@string/title_textview_main_menu">
         </TextView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

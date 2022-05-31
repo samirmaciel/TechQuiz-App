@@ -38,7 +38,7 @@
 
     <TextView
         android:id="@+id/tv_dontHaveAccount"
-        android:text="Não possui conta? Registre-se aqui!"
+        android:text="@string/message_user_register"
         app:layout_constraintEnd_toEndOf="@+id/edt_registerName"
         app:layout_constraintHorizontal_bias="0.444"
         android:layout_marginTop="40dp"

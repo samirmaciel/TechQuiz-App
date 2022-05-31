@@ -8,14 +8,23 @@
     tools:context=".view.main.auth.register.ImageSelectFragment">
 
     <ImageView
-        android:id="@+id/iv_selectedImageProfile"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:id="@+id/ic_image_logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginTop="16dp"
-        android:src="@drawable/default_avatar_1"
+        android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_selectedImageProfile"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/default_avatar_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ic_image_logo" />
 
     <TextView
         android:id="@+id/textView"
@@ -23,9 +32,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/bungeeregular"
-        android:text="Selecione sua imagem"
+        android:text="@string/selected_image_profile"
         android:textColor="?colorOnSurface"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_selectedImageProfile" />

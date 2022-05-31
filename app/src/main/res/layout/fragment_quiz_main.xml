@@ -38,7 +38,7 @@
 
     <TextView
         style="@style/tv_default"
-        android:text="Jogador 1"
+        android:text="@string/player_one"
         app:layout_constraintEnd_toEndOf="@+id/frameLayout1"
         app:layout_constraintStart_toStartOf="@+id/frameLayout1"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout1" />
@@ -75,7 +75,7 @@
 
     <TextView
         style="@style/tv_default"
-        android:text="Jogador 2"
+        android:text="@string/player_two"
         app:layout_constraintEnd_toEndOf="@+id/frameLayout2"
         app:layout_constraintStart_toStartOf="@+id/frameLayout2"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
@@ -227,7 +227,7 @@
 
             <TextView
                 android:id="@+id/tv_quizQuestion"
-                android:text="Pergunta"
+                android:text="@string/question_game"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 style="@style/tv_default"/>

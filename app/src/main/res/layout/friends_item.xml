@@ -23,7 +23,7 @@
     <TextView
         android:id="@+id/tv_friendItemPlayerName"
         style="@style/tv_default"
-        android:text="Nome do Jogador"/>
+        android:text="@string/name_of_player"/>
 
 
 </LinearLayout>

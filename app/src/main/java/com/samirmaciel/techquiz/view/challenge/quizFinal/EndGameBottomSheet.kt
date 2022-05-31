@@ -10,7 +10,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.samirmaciel.techquiz.R
 import com.samirmaciel.techquiz.databinding.BottomsheetEndgameBinding
-import jp.wasabeef.blurry.Blurry
 
 class EndGameBottomSheet  : BottomSheetDialogFragment() {
 
@@ -28,8 +27,13 @@ class EndGameBottomSheet  : BottomSheetDialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        expandBottomSheet()
         setStyle(BottomSheetDialogFragment.STYLE_NORMAL, R.style.MyBottomSheetDialogTheme);
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        expandBottomSheet()
+
     }
 
 

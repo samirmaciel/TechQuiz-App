@@ -9,7 +9,6 @@ import androidx.navigation.fragment.findNavController
 import com.samirmaciel.techquiz.R
 import com.samirmaciel.techquiz.databinding.FragmentLoginBinding
 import com.samirmaciel.techquiz.view.challenge.quizFinal.EndGameBottomSheet
-import jp.wasabeef.blurry.Blurry
 
 class LoginFragment : Fragment() {
 

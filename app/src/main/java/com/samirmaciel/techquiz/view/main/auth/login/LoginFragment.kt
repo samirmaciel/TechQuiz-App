@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.samirmaciel.techquiz.R
 import com.samirmaciel.techquiz.databinding.FragmentLoginBinding
+import com.samirmaciel.techquiz.view.challenge.quizFinal.EndGameBottomSheet
 
 class LoginFragment : Fragment() {
 
@@ -25,8 +26,11 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnLoginEnter.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+            val modal = EndGameBottomSheet()
+
+            modal.show(childFragmentManager, "modal")
         }
+
     }
 
     override fun onDestroy() {

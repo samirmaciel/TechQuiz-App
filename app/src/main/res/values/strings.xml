@@ -13,18 +13,4 @@
     <string name="title_button_rank">Rank</string>
     <string name="hint_edt_search_friend">Procurar amigo</string>
     <string name="title_button_back">Volta</string>
-    <string name="name_of_player">Nome do Jogador</string>
-    <string name="player_one">Jogador 1</string>
-    <string name="player_two">Jogador 2</string>
-    <string name="question_game">Pergunta</string>
-    <string name="message_user_register">Não possui conta? Registre-se aqui!</string>
-    <string name="selected_image_profile">Selecione sua imagem</string>
-    <string name="str1">"Line 1.&#xA;Line 2.&#10;Line 3."</string>
-    <string name="text_play_again"><![CDATA[     JOGAR     \nNOVAMENTE]]></string>
-    <string name="text_main_menu"><![CDATA[      MENU    \nPRINCIPAL]]></string>
-    <string name="congratulations_winner">PARABÉNS VOCÊ GANHOU!</string>
-    <string name="current_score">PONTUAÇÃO ATUAL:</string>
-    <string name="current_rating">CLASSIFICAÇÃO ATUAL:</string>
-    <string name="score_classification_current">1010</string>
-    <string name="score_current_actualscore">1010</string>
 </resources>

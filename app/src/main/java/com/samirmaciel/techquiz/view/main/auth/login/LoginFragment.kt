@@ -25,12 +25,24 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnLoginEnter.setOnClickListener {
-            val modal = EndGameBottomSheet()
+        setListeners()
 
-            modal.show(childFragmentManager, "modal")
+    }
+
+    private fun setListeners(){
+        binding.btnLoginEnter.setOnClickListener {
         }
 
+        binding.tvLoginCreateNewAccount.setOnClickListener{
+            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+        }
+    }
+
+    private fun validateFields(): Boolean {
+        val email = binding.edtLoginEmail.text.toString()
+        val password = binding.edtLoginPassword.text.toString()
+
+        return email.isNotBlank() && password.isNotBlank()
     }
 
     override fun onDestroy() {

@@ -2,9 +2,9 @@
     <string name="app_name">Tech Quiz</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="hint_login_nickname">Apelido</string>
-    <string name="hint_login_email">Email</string>
-    <string name="hint_login_password">Senha</string>
+    <string name="hint_nickname">Apelido</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Senha</string>
     <string name="title_button_login_enter">Entrar</string>
     <string name="title_register_button_continue">Continuar</string>
     <string name="title_button_friends">Amigos</string>
@@ -21,4 +21,7 @@
     <string name="title_textview_currentRatingActual">1140</string>
     <string name="title_textview_rematchGame">Revanche</string>
     <string name="title_textview_main_menu">MENU PRINCIPAL</string>
+    <string name="title_textview_create_new_account">Não possui conta? Crie aqui!</string>
+    <string name="hint_full_name">Nome completo</string>
+    <string name="hint_password_again">Senha novamente</string>
 </resources>

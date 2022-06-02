@@ -17,34 +17,36 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edt_registerNickName"
-        android:hint="@string/hint_login_email"
+        android:id="@+id/edt_loginEmail"
+        android:hint="@string/hint_email"
         android:layout_marginHorizontal="50dp"
         android:layout_marginTop="44dp"
+        android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logo"
         style="@style/edt_input_default" />
 
     <EditText
-        android:id="@+id/edt_registerName"
-        android:hint="@string/hint_login_password"
+        android:id="@+id/edt_loginPassword"
+        android:hint="@string/hint_password"
         android:layout_marginTop="16dp"
         style="@style/edt_input_default"
+        android:inputType="textPassword"
         android:layout_marginHorizontal="50dp"
-        app:layout_constraintTop_toBottomOf="@id/edt_registerNickName"
+        app:layout_constraintTop_toBottomOf="@id/edt_loginEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
-        android:id="@+id/tv_dontHaveAccount"
-        android:text="user register"
-        app:layout_constraintEnd_toEndOf="@+id/edt_registerName"
-        app:layout_constraintHorizontal_bias="0.444"
-        android:layout_marginTop="40dp"
-        app:layout_constraintStart_toStartOf="@+id/edt_registerName"
-        app:layout_constraintTop_toBottomOf="@+id/edt_registerName"
-        style="@style/tv_default" />
+        android:id="@+id/tv_loginCreateNewAccount"
+        style="@style/tv_default"
+        android:layout_marginTop="20dp"
+        android:text="@string/title_textview_create_new_account"
+        app:layout_constraintEnd_toEndOf="@+id/edt_loginPassword"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="@+id/edt_loginPassword"
+        app:layout_constraintTop_toBottomOf="@+id/edt_loginPassword" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_loginEnter"

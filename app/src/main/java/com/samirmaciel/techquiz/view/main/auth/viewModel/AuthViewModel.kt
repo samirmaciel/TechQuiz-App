@@ -3,6 +3,7 @@ package com.samirmaciel.techquiz.view.main.auth.viewModel
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
+import android.util.Log
 import androidx.core.net.toUri
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,72 +12,79 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import com.samirmaciel.techquiz.domain.enums.FirebaseCollectionsNames
+import com.samirmaciel.techquiz.domain.enums.StageOfRegister
 import com.samirmaciel.techquiz.domain.model.User
+import com.samirmaciel.techquiz.domain.model.UserForm
 import java.io.ByteArrayOutputStream
+import java.lang.Exception
 
 
 class AuthViewModel(
     val mAuth: FirebaseAuth,
     val mDataBase: DatabaseReference,
-    val mStored: FirebaseStorage
+    val mStored: StorageReference
 ) : ViewModel() {
 
-    var currentUser: MutableLiveData<User> = MutableLiveData()
-    var onCompletedLogin: MutableLiveData<Boolean> = MutableLiveData()
+    var userTempRegister: UserForm? = null
+    var stageRegister: StageOfRegister? =  null
+    var stageButtonListener: MutableLiveData<StageOfRegister> = MutableLiveData()
+    var isFieldValid: MutableLiveData<Pair<Boolean, String?>> = MutableLiveData()
+    var onCompletedLogin: MutableLiveData<Pair<Boolean, String>> = MutableLiveData()
+    var isUserLogged: MutableLiveData<Boolean> = MutableLiveData()
     var onCompletedRegister: MutableLiveData<Pair<Boolean, String>> = MutableLiveData()
 
+    init {
+        checkUserLoged()
+    }
 
     fun loginWithEmailAndPassword(email: String, password: String) {
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
 
             it.addOnSuccessListener {
-                onCompletedLogin.postValue(true)
+                onCompletedLogin.postValue(Pair(true, "Login efetuado com sucesso"))
             }
 
             it.addOnFailureListener {
-                onCompletedLogin.postValue(false)
+                onCompletedLogin.postValue(Pair(false, it.message.toString()))
             }
         }
     }
 
-    fun registerUser(
-        email: String,
-        nickName: String,
-        fullName: String,
-        avatar: Drawable,
-        password: String
+    fun createNewAccount(
+        userForm: UserForm
     ) {
-        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
+        mAuth.createUserWithEmailAndPassword(userForm.email, userForm.password).addOnCompleteListener {
 
             it.addOnSuccessListener {
                 val userFireBase = it.user
 
-                if(userFireBase != null){
-                    val resultUpload = uploadImageToFireStored(avatar, userFireBase.uid)
+                if (userFireBase != null) {
+                        val user = User(userFireBase.uid, userForm.nickName, userForm.fullName)
+                        saveUserOnRealTimeDatabase(user, userForm.avatar!!)
 
-                    if(resultUpload.first){
-                        val user = User(userFireBase.uid, nickName, fullName, resultUpload.second!!)
-                    }else{
-                        onCompletedRegister.postValue(Pair(false, "Upload image fail"))
-                    }
-                }else{
+                } else {
                     onCompletedRegister.postValue(Pair(false, "create userFireBase fail"))
                 }
             }
 
             it.addOnFailureListener {
-
+                onCompletedRegister.postValue((Pair(false, it.message.toString())))
             }
         }
 
     }
 
-    private fun uploadImageToFireStored(image: Drawable, uuID: String): Pair<Boolean, String?> {
-        val mountainsRef: StorageReference = mStored.reference.child("$uuID.jpg")
-        val imageBitmap = (image as BitmapDrawable).bitmap
+    private fun checkUserLoged() {
+        val user = mAuth.currentUser
+        if (user != null) {
+            isUserLogged.value = true
+        }
+    }
 
-        var result = false
-        var imageurl: String? = null
+    private fun saveUserOnRealTimeDatabase(user: User, image: Drawable) {
+        val mountainsRef: StorageReference = mStored.child("${user.UUID}.jpg")
+        val imageBitmap = (image as BitmapDrawable).bitmap
 
         val baos = ByteArrayOutputStream()
         imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
@@ -86,34 +94,24 @@ class AuthViewModel(
         uploadTask.addOnCompleteListener {
 
             it.addOnSuccessListener {
-                it.metadata?.let {
-                    it.path?.let {
-                        result = true
-                        imageurl = it.toUri().toString()
+
+                try {
+                    mStored.child(it.metadata!!.path.toUri().toString()).downloadUrl.addOnSuccessListener {
+                        user.avatar = it.toString()
+                        mDataBase.child(FirebaseCollectionsNames.USERS.label).child(user.UUID).setValue(user)
+                        onCompletedRegister.postValue(Pair(true, "Registro efetuado com sucesso!"))
                     }
+
+                }catch (ex: Exception){
+                    onCompletedRegister.postValue(Pair(false, ex.message.toString()))
                 }
+
             }
 
             it.addOnFailureListener {
-                result = false
+                onCompletedRegister.postValue(Pair(false, it.message.toString()))
             }
         }
-
-        return Pair(result, imageurl)
     }
 
-    private fun registerUserOnRealTime(user: User) {
-        mDataBase.child("users").child(user.UUID).setValue(user)
-    }
-
-
-    class AuthViewModelFactory(
-        val mAuth: FirebaseAuth,
-        val mDataBase: DatabaseReference,
-        val mStored: FirebaseStorage
-    ) : ViewModelProvider.Factory {
-        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            return AuthViewModel(mAuth, mDataBase, mStored) as T
-        }
-    }
 }

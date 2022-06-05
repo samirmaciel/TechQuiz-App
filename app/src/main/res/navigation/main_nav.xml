@@ -33,7 +33,11 @@
         android:id="@+id/homeFragment"
         android:name="com.samirmaciel.techquiz.view.main.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.samirmaciel.techquiz.view.main.auth.register.RegisterFragment"

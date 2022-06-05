@@ -8,23 +8,13 @@
     tools:context=".view.main.auth.register.ImageSelectFragment">
 
     <ImageView
-        android:id="@+id/ic_image_logo"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
         android:id="@+id/iv_selectedImageProfile"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:src="@drawable/default_avatar_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ic_image_logo" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"

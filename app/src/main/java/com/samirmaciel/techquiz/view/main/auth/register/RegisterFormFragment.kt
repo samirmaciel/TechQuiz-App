@@ -5,13 +5,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import com.samirmaciel.techquiz.R
 import com.samirmaciel.techquiz.databinding.FragmentRegisterFormBinding
+import com.samirmaciel.techquiz.domain.enums.StageOfRegister
+import com.samirmaciel.techquiz.domain.model.UserForm
+import com.samirmaciel.techquiz.view.main.auth.viewModel.AuthViewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class RegisterFormFragment : Fragment() {
 
     private var _binding: FragmentRegisterFormBinding? = null
     private val binding: FragmentRegisterFormBinding get() = _binding!!
+    private val viewModel: AuthViewModel by sharedViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,6 +32,32 @@ class RegisterFormFragment : Fragment() {
             )
         )
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setObservers()
+    }
+
+    private fun setObservers(){
+
+        viewModel.stageButtonListener.observe(viewLifecycleOwner){
+            if(it.ordinal == StageOfRegister.STAGE1.ordinal ){
+                if(validateFields()){
+                    if(validatePassword()){
+                        viewModel.userTempRegister = UserForm(binding.edtRegisterNickName.text.toString(),
+                                                                binding.edtRegisterFullName.text.toString(),
+                                                                binding.edtRegisterEmail.text.toString(),
+                                                                binding.edtRegisterPassword.text.toString())
+                        viewModel.isFieldValid.value = Pair(true, null)
+                    }else{
+                        viewModel.isFieldValid.value = Pair(false, "Campo senha não está igual")
+                    }
+                }else{
+                    viewModel.isFieldValid.value = Pair(false, "Preencha todos os campos")
+                }
+            }
+        }
     }
 
     private fun validateFields(): Boolean {

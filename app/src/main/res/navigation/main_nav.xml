@@ -37,10 +37,26 @@
         <action
             android:id="@+id/action_homeFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_friendListFragment"
+            app:destination="@id/friendListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_notificationsFragment"
+            app:destination="@id/notificationsFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.samirmaciel.techquiz.view.main.auth.register.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/friendListFragment"
+        android:name="com.samirmaciel.techquiz.view.main.friendlist.FriendListFragment"
+        android:label="fragment_friend_list"
+        tools:layout="@layout/fragment_friend_list" />
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.samirmaciel.techquiz.view.main.notifications.NotificationsFragment"
+        android:label="fragment_notifications"
+        tools:layout="@layout/fragment_notifications" />
 </navigation>

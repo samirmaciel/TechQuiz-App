@@ -18,6 +18,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <FrameLayout
+        app:layout_constraintBottom_toBottomOf="@+id/btn_homeSettings"
+        app:layout_constraintStart_toEndOf="@+id/btn_homeSettings"
+        app:layout_constraintTop_toTopOf="@+id/btn_homeSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/btn_homeNotification"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_baseline_notifications_24"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_homeNotificationCount"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            style="@style/tv_default"
+            android:textColor="@color/score_red"
+            android:text="0"/>
+    </FrameLayout>
+
+
     <ImageButton
         android:id="@+id/btn_homeLogout"
         android:layout_width="40dp"

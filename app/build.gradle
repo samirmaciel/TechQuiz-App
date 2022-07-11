@@ -59,6 +59,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-database'
     implementation 'com.google.firebase:firebase-storage'
+    implementation 'com.google.firebase:firebase-firestore-ktx'
 
     implementation "io.insert-koin:koin-android:$koin_version"
     implementation "io.insert-koin:koin-android-ext:$koin_version"

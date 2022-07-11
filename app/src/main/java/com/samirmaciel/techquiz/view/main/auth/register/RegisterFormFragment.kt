@@ -42,20 +42,35 @@ class RegisterFormFragment : Fragment() {
     private fun setObservers(){
 
         viewModel.stageButtonListener.observe(viewLifecycleOwner){
-            if(it.ordinal == StageOfRegister.STAGE1.ordinal ){
-                if(validateFields()){
-                    if(validatePassword()){
-                        viewModel.userTempRegister = UserForm(binding.edtRegisterNickName.text.toString(),
-                                                                binding.edtRegisterFullName.text.toString(),
-                                                                binding.edtRegisterEmail.text.toString(),
-                                                                binding.edtRegisterPassword.text.toString())
-                        viewModel.isFieldValid.value = Pair(true, null)
-                    }else{
-                        viewModel.isFieldValid.value = Pair(false, "Campo senha não está igual")
-                    }
-                }else{
-                    viewModel.isFieldValid.value = Pair(false, "Preencha todos os campos")
+            validateNickName()
+        }
+
+        viewModel.onCheckNickNameIfExists.observe(viewLifecycleOwner){
+            if(it){
+                validateAllFields(viewModel.stageButtonListener.value!!)
+            }else{
+                viewModel.isFieldValid.value = Pair(false, "NickName já existe")
+            }
+        }
+    }
+
+    private fun validateAllFields(it: StageOfRegister) {
+        if (it.ordinal == StageOfRegister.STAGE1.ordinal) {
+            if (validateFields()) {
+                if (validatePassword()) {
+                    viewModel.userTempRegister = UserForm(
+                        binding.edtRegisterNickName.text.toString(),
+                        binding.edtRegisterFullName.text.toString(),
+                        binding.edtRegisterEmail.text.toString(),
+                        binding.edtRegisterPassword.text.toString()
+                    )
+                    viewModel.isFieldValid.value = Pair(true, null)
+                } else {
+                    viewModel.isFieldValid.value = Pair(false, "Campo senha não está igual")
                 }
+
+            } else {
+                viewModel.isFieldValid.value = Pair(false, "Preencha todos os campos")
             }
         }
     }
@@ -72,6 +87,11 @@ class RegisterFormFragment : Fragment() {
                 !email.isNullOrBlank() &&
                 !password.isNullOrBlank() &&
                 !passwordAgain.isNullOrBlank()
+    }
+
+    private fun validateNickName(){
+       viewModel.validateNickName(binding.edtRegisterNickName.text.toString())
+
     }
 
     private fun validatePassword(): Boolean{

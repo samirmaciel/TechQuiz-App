@@ -7,10 +7,10 @@ import android.util.Log
 import androidx.core.net.toUri
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.storage.StorageReference
 import com.samirmaciel.techquiz.domain.enums.FirebaseCollectionsNames
 import com.samirmaciel.techquiz.domain.enums.StageOfRegister
@@ -23,7 +23,8 @@ import java.lang.Exception
 class AuthViewModel(
     val mAuth: FirebaseAuth,
     val mDataBase: DatabaseReference,
-    val mStored: StorageReference
+    val mStored: StorageReference,
+    val mStore: FirebaseFirestore
 ) : ViewModel() {
 
     var userTempRegister: UserForm? = null
@@ -32,6 +33,7 @@ class AuthViewModel(
     var isFieldValid: MutableLiveData<Pair<Boolean, String?>> = MutableLiveData()
     var onCompletedLogin: MutableLiveData<Pair<Boolean, String>> = MutableLiveData()
     var isUserLogged: MutableLiveData<Boolean> = MutableLiveData()
+    var onCheckNickNameIfExists: MutableLiveData<Boolean> = MutableLiveData()
     var onCompletedRegister: MutableLiveData<Pair<Boolean, String>> = MutableLiveData()
 
     init {
@@ -75,6 +77,22 @@ class AuthViewModel(
 
     }
 
+    fun validateNickName(nickName: String){
+
+        mDataBase.child("GeneralUserInfo|NickNames").child(nickName.lowercase()).get().addOnSuccessListener {
+            val valueNickName: String? = it.getValue() as String?
+
+            if(valueNickName != null){
+                onCheckNickNameIfExists.postValue(false)
+            }else{
+                onCheckNickNameIfExists.postValue(true)
+            }
+
+        }
+
+    }
+
+
     private fun checkUserLoged() {
         val user = mAuth.currentUser
         if (user != null) {
@@ -96,9 +114,12 @@ class AuthViewModel(
             it.addOnSuccessListener {
 
                 try {
+                    val mapNickNames: HashMap<String, String> = hashMapOf()
+                    mapNickNames[user.nickName] = user.UUID
                     mStored.child(it.metadata!!.path.toUri().toString()).downloadUrl.addOnSuccessListener {
                         user.avatar = it.toString()
                         mDataBase.child(FirebaseCollectionsNames.USERS.label).child(user.UUID).setValue(user)
+                        mDataBase.child("GeneralUserInfo|NickNames").child(user.nickName.lowercase()).setValue(user.UUID)
                         onCompletedRegister.postValue(Pair(true, "Registro efetuado com sucesso!"))
                     }
 
